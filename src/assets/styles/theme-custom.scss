@@ -1,0 +1,170 @@
+/* Add here all your CSS customizations */
+.dropdown-toggle::after{
+    display: none;
+}
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu){
+    border-top-right-radius: 500px; 
+    border-bottom-right-radius: 500px;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: white;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: white;
+}
+
+.dropdown-item{
+    padding: 0;
+}
+
+.label {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.notifications .notification-menu{
+    left: auto !important;
+    right: -5px !important;
+}
+
+.notifications > li .notification-icon{
+    border-color: transparent !important;
+
+    &:hover, &:active, &:focus{
+        border-color: transparent !important;
+    }
+
+
+}
+
+
+
+.notification-menu .image{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.notification-menu .image .icon{
+    width: 15px;
+    
+}
+
+.notifications > li .notification-icon .badge{
+    border-radius: 50px;
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle{
+    background-color: transparent;
+}
+
+.btn-primary{
+    border-color: transparent;
+    background-color: transparent !important;
+}
+
+body .btn-primary:active, body .btn-primary:focus{
+    border-color: transparent !important;
+}
+
+
+.btn-check:focus+.btn-primary, .btn-primary:focus{
+    box-shadow: none;
+}
+
+body .btn-primary:hover{
+    border-color: transparent;
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle{
+    border-color: transparent !important;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus{
+    box-shadow: none;
+}
+.nav{
+    display: block;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+}
+
+ul.nav-main li .icon {
+    font-size: 18px;
+    font-size: 1.8rem;
+    width: 1.1em;
+    margin-right: 0.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+ul.nav-main li.nav-parent > a:after{
+    content: ">";
+    transform: rotate(90deg);
+}
+
+.sidebar-left .sidebar-header .sidebar-toggle .icon {
+    color: #c3c3c3;
+    font-size: 17px;
+    font-size: 1.7rem;
+    line-height: 50px;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+.sidebar-left .sidebar-header .sidebar-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header .right-wrapper{
+    margin-right: 30px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.accordion-body{
+    background-color: #fdfdfd;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-group .panel-accordion .panel-heading a .icon {
+    margin-right: 4px;
+}
+
