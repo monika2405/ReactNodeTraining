@@ -3,10 +3,10 @@ import SidebarLeft from '../../components/SidebarLeft';
 import DashboardMain from '../../components/DashboardMain';
 
 
-const Home = (props) => {
+const Home = () => {
     return(
         <div className="inner-wrapper">
-            <SidebarLeft props={props}/>
+            <SidebarLeft/>
             <DashboardMain />
         </div>
     )

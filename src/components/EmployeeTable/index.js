@@ -58,7 +58,7 @@ const EmployeeTable = () => {
 														<th>#</th>
 														<th>First Name</th>
 														<th>Last Name</th>
-														<th>Username</th>
+														<th>Department</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -66,19 +66,19 @@ const EmployeeTable = () => {
 														<td>1</td>
 														<td>Mark</td>
 														<td>Otto</td>
-														<td>@mdo</td>
+														<td>IT</td>
 													</tr>
 													<tr>
 														<td>2</td>
 														<td>Jacob</td>
 														<td>Thornton</td>
-														<td>@fat</td>
+														<td>Marketing</td>
 													</tr>
 													<tr>
 														<td>3</td>
 														<td>Larry</td>
 														<td>the Bird</td>
-														<td>@twitter</td>
+														<td>IT</td>
 													</tr>
 												</tbody>
 											</table>
@@ -118,7 +118,7 @@ const EmployeeTable = () => {
                     />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-                    <Form.Label>Company</Form.Label>
+                    <Form.Label>Department</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder=""
