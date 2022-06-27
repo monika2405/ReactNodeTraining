@@ -7,12 +7,122 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 import LiquidFillGauge from 'react-liquid-gauge';
 import { interpolateRgb } from 'd3-interpolate';
 import { Accordion } from 'react-bootstrap';
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Sparklines, SparklinesBars, SparklinesLine   } from 'react-sparklines';
+
 
 const DashboardMain = () => {
     const [startColor, setStartColor] = useState('#0090D9');
     const [endColor, setEndColor] = useState('#0090D9');
     const interpolate = interpolateRgb(startColor, endColor);
     const fillColor = interpolate(50 / 100);
+	const UserData = [
+		{
+		  id: 1,
+		  year: 2016,
+		  userGain: 80000,
+		  userLost: 823,
+		},
+		{
+		  id: 2,
+		  year: 2017,
+		  userGain: 45677,
+		  userLost: 345,
+		},
+		{
+		  id: 3,
+		  year: 2018,
+		  userGain: 78888,
+		  userLost: 555,
+		},
+		{
+		  id: 4,
+		  year: 2019,
+		  userGain: 90000,
+		  userLost: 4555,
+		},
+		{
+		  id: 5,
+		  year: 2020,
+		  userGain: 4300,
+		  userLost: 234,
+		},
+	  ];
+	  const UserData2 = [
+		{
+		  id: 1,
+		  year: 2016,
+		  userGain: 300,
+		  userLost: 100,
+		},
+		{
+		  id: 2,
+		  year: 2017,
+		  userGain: 250,
+		  userLost: 100,
+		},
+		{
+		  id: 3,
+		  year: 2018,
+		  userGain: 300,
+		  userLost: 100,
+		},
+		{
+		  id: 4,
+		  year: 2019,
+		  userGain: 285,
+		  userLost: 80,
+		},
+		{
+		  id: 5,
+		  year: 2020,
+		  userGain: 265,
+		  userLost: 95,
+		},
+	  ];
+	const [userData, setUserData] = useState({
+		labels: UserData.map((data) => data.year),
+		datasets: [
+		  {
+			label: "Users Gained",
+			fill: true,
+			maintainAspectRatio : false,
+			data: UserData.map((data) => data.userGain),
+			backgroundColor: [
+			  "rgba(75,192,192,1)",
+			  "#ecf0f1",
+			  "#50AF95",
+			  "#f3ba2f",
+			  "#2a71d0",
+			],
+			borderColor: "black",
+			borderWidth: 2,
+		  },
+		],
+	  });	
+	  const [userData2, setUserData2] = useState({
+		labels: UserData2.map((data) => data.year),
+		datasets: [
+		  {
+			label: "Users Gained",
+			responsive: true,
+			maintainAspectRatio : false,
+			aspectRatio: 3,
+			data: UserData2.map((data) => data.userGain),
+			backgroundColor: [
+			  "rgba(75,192,192,1)",
+			  "#ecf0f1",
+			  "#50AF95",
+			  "#f3ba2f",
+			  "#2a71d0",
+			],
+			borderColor: "black",
+			borderWidth: 2,
+		  },
+		],
+	  });	
+
     return (
         <div className='content-body'>
             <header className="page-header">
@@ -44,8 +154,7 @@ const DashboardMain = () => {
 									<p className="panel-subtitle">Customize the graphs as much as you want, there are so many options and features to display information using JSOFT Admin Template.</p>
 								</header>
 								<div className="panel-body">
-
-								
+									<Line data={userData} />;
 
 								</div>
 							</section>
@@ -74,7 +183,7 @@ const DashboardMain = () => {
 								<div className="panel-body">
 									<div className="row">
 										<div className="col-lg-8">
-											<div className="chart-data-selector" id="salesSelectorWrapper">
+											<div id="salesSelectorWrapper">
 												<h2>
 													Sales:
 													<strong>
@@ -87,7 +196,7 @@ const DashboardMain = () => {
 												</h2>
 
 												<div id="salesSelectorItems" className="chart-data-selector-items mt-sm">
-                                                    
+												<Line data={userData2} />;
 												</div>
 
 											</div>
@@ -119,7 +228,7 @@ const DashboardMain = () => {
 											<div className="widget-summary">
 												<div className="widget-summary-col widget-summary-col-icon">
 													<div className="summary-icon bg-primary">
-                                                        <FontAwesomeIcon icon={solid("ring")} classNameName="icon" />
+                                                        <FontAwesomeIcon icon={solid("ring")} className="icon" />
 													</div>
 												</div>
 												<div className="widget-summary-col">
@@ -144,7 +253,7 @@ const DashboardMain = () => {
 											<div className="widget-summary">
 												<div className="widget-summary-col widget-summary-col-icon">
 													<div className="summary-icon bg-secondary">
-														<FontAwesomeIcon icon={solid('usd')} classNameName="icon" />
+														<FontAwesomeIcon icon={solid('usd')} className="icon" />
 													</div>
 												</div>
 												<div className="widget-summary-col">
@@ -168,7 +277,7 @@ const DashboardMain = () => {
 											<div className="widget-summary">
 												<div className="widget-summary-col widget-summary-col-icon">
 													<div className="summary-icon bg-tertiary">
-                                                        <FontAwesomeIcon icon={solid('shopping-cart')} classNameName="icon" />
+                                                        <FontAwesomeIcon icon={solid('shopping-cart')} className="icon" />
 													</div>
 												</div>
 												<div className="widget-summary-col">
@@ -192,7 +301,7 @@ const DashboardMain = () => {
 											<div className="widget-summary">
 												<div className="widget-summary-col widget-summary-col-icon">
 													<div className="summary-icon bg-quartenary">
-														<FontAwesomeIcon icon={solid('user')} classNameName="icon" />
+														<FontAwesomeIcon icon={solid('user')} className="icon" />
 													</div>
 												</div>
 												<div className="widget-summary-col">
@@ -399,14 +508,17 @@ const DashboardMain = () => {
 								</header>
 								<div className="panel-body">
 									<section className="panel">
-										<div className="panel-body">
-											<div className="small-chart pull-right" id="sparklineBarDash"></div>
-											<script type="text/javascript">
-												var sparklineBarDashData = [5, 6, 7, 2, 0, 4 , 2, 4, 2, 0, 4 , 2, 4, 2, 0, 4];
-											</script>
+										<div className="panel-body sparkline-body">
+											<div className='panel-text'>
 											<div className="h4 text-bold mb-none">488</div>
 											<p className="text-xs text-muted mb-none">Average Profile Visits</p>
+											</div>
+											
+											<Sparklines data={[5, 10, 5, 20, 5, 10, 5, 20]} width={50} height={20}>
+											<SparklinesBars />
+										</Sparklines>
 										</div>
+										
 									</section>
 									<section className="panel">
 										<div className="panel-body">
@@ -421,13 +533,15 @@ const DashboardMain = () => {
 										</div>
 									</section>
 									<section className="panel">
-										<div className="panel-body">
-											<div className="small-chart pull-right" id="sparklineLineDash"></div>
-											<script type="text/javascript">
-												var sparklineLineDashData = [15, 16, 17, 19, 10, 15, 13, 12, 12, 14, 16, 17];
-											</script>
+										<div className="panel-body sparkline-body">
+											<div className='panel-text'>
 											<div className="h4 text-bold mb-none">89</div>
 											<p className="text-xs text-muted mb-none">Pending Tasks</p>
+											</div>
+										<Sparklines data={[5, 10, 5, 20,5, 10, 5, 20]} width={100} height={20}>
+  											<SparklinesLine color="blue" />
+										</Sparklines>
+											
 										</div>
 									</section>
 								</div>
@@ -521,7 +635,7 @@ const DashboardMain = () => {
 															<a className="img-thumbnail lightbox" href="../../assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }' >
 																<img className="img-responsive" width="215" src={require("../../assets/images/projects/project-4.jpg")} />
 																<span className="zoom">
-                                                                    <FontAwesomeIcon icon={solid('search')} classNameName="icon" />
+                                                                    <FontAwesomeIcon icon={solid('search')} className="icon" />
 																</span>
 															</a>
 														</div>

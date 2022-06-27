@@ -168,3 +168,13 @@ ul.nav-main li.nav-parent > a:after{
     margin-right: 4px;
 }
 
+.sparkline-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg{
+        width: 150px;
+    }
+}
+

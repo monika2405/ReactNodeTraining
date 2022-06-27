@@ -99,6 +99,7 @@ const EmployeeTable = () => {
                         type="text"
                         placeholder=""
                         autoFocus
+                        required
                     />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
@@ -106,7 +107,7 @@ const EmployeeTable = () => {
                     <Form.Control
                         type="text"
                         placeholder=""
-                        
+                        required
                     />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
@@ -114,7 +115,7 @@ const EmployeeTable = () => {
                     <Form.Control
                         type="text"
                         placeholder=""
-                        
+                        required
                     />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
@@ -122,7 +123,7 @@ const EmployeeTable = () => {
                     <Form.Control
                         type="text"
                         placeholder=""
-                        
+                        required
                     />
                     </Form.Group>
                 </Form>
@@ -131,7 +132,7 @@ const EmployeeTable = () => {
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="success" onClick={handleClose}>
+                <Button variant="success" type='submit' onClick={handleClose}>
                     Save Changes
                 </Button>
                 </Modal.Footer>
